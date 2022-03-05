@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+
+    
+
+        
+<head>
+    <title>Moral Questions Model</title>
+</head>
+<h1>Moral Questions Model</h1>
+
+<form action="http://127.0.0.1:5000/" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        Moral Question:
+        <input name="moral question" type="text" required>
+        <br>
+
+        <input type="submit">
+    </fieldset>
+</form>
+
+
+<br>
+<div class="result" >
+        <p style="font-size:16px"> Question: {{ original_input }}</p>
+        <p style="font-size:16px"> Predicted Morality: {{ result }}</p>
+</div>
+</html>
+
+
