@@ -1,6 +1,6 @@
 import flask
 import pandas as pd
-
+from Model import rf, preprocess
 
 # Use pickle to load in the pre-trained model.
 # import pickle 
@@ -20,8 +20,11 @@ def main():
         print("AT POST")
         moral_question = flask.request.form['moral question']
         print("moral question", moral_question)
+        
+        text_vector = preprocess(moral_question)
+        prediction = rf.predict([text_vector])
 
-        prediction = 23 
+        # prediction = "ethical"
         return flask.render_template('main.html',original_input=moral_question,result=prediction, )
     
 if __name__ == '__main__':
